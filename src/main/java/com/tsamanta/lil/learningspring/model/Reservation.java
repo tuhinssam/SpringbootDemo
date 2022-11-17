@@ -6,10 +6,6 @@ import java.util.Date;
 @Entity
 @Table(name = "Reservation")
 public class Reservation {
-//    RESERVATION_ID BIGSERIAL PRIMARY KEY,
-//    ROOM_ID BIGINT NOT NULL,
-//    GUEST_ID BIGINT NOT NULL,
-//    RES_DATE DATE
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="RESERVATION_ID")

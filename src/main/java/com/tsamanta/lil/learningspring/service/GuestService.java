@@ -5,6 +5,7 @@ import com.tsamanta.lil.learningspring.repository.GuestRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GuestService {
@@ -15,7 +16,8 @@ public class GuestService {
     }
 
     public List<Guest> GetAllGuests() {
-       return guestRepository.findAll();
+       List<Guest> guestList = guestRepository.findAll();
+       return guestList.stream().sorted((g1,g2)->g1.getLastName().compareTo(g2.getLastName()))/*sort based on last name*/.collect(Collectors.toList());
     }
 
 }
